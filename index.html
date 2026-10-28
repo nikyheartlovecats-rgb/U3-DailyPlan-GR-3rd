@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Montano - 3rd Grade Grammar Unit 3 Interactive Whiteboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        montanoBlue: '#1269A8',
+                        montanoYellow: '#F7D615',
+                        montanoGreen: '#54887D',
+                        montanoLightBlue: '#88B5C7',
+                        montanoOlive: '#A6B046',
+                        montanoBg: '#F2F5E9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            background-color: #F2F5E9;
+        }
+    </style>
+</head>
+<body class="bg-[#F2F5E9] min-h-screen flex flex-col text-slate-800">
+
+    <!-- Header with Official Montano Logo and Fullscreen Button -->
+    <header class="bg-[#1269A8] text-white shadow-lg p-4 flex flex-col md:flex-row justify-between items-center border-b-4 border-[#F7D615]">
+        <div class="flex items-center space-x-4 mb-3 md:mb-0">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" alt="Colegio Montano Logo" class="h-16 w-16 rounded-full bg-white p-1 shadow-md object-contain">
+            <div>
+                <h1 class="text-2xl font-bold tracking-wide">COLEGIO MONTANO</h1>
+                <p class="text-sm text-[#88B5C7] font-semibold">Pedagogical & Interactive Digital Whiteboard | Teacher: Nicole De León</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3">
+            <div class="bg-[#54887D] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#F7D615] shadow">
+                3rd Grade Grammar • Unit 3 (Our World 3)
+            </div>
+            <button onclick="toggleFullscreen()" class="bg-[#F7D615] text-[#1269A8] font-bold px-4 py-2 rounded-xl shadow hover:bg-yellow-300 transition flex items-center space-x-2 text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+                <span>Fullscreen</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Bar & Schedule Filter -->
+    <nav class="bg-[#88B5C7] p-3 shadow-inner flex flex-wrap justify-center gap-2">
+        <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn px-4 py-2 rounded-xl font-bold text-sm bg-[#1269A8] text-white shadow transition">Curriculum Roadmap (7 Weeks)</button>
+        <button onclick="switchTab('class-session')" id="btn-class-session" class="tab-btn px-4 py-2 rounded-xl font-bold text-sm bg-white text-[#1269A8] shadow hover:bg-[#F2F5E9] transition">Interactive Class Lesson Board</button>
+        <button onclick="switchTab('rubric')" id="btn-rubric" class="tab-btn px-4 py-2 rounded-xl font-bold text-sm bg-white text-[#1269A8] shadow hover:bg-[#F2F5E9] transition">Plenary Evaluation Rubric</button>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="flex-grow p-4 md:p-6 max-w-7xl mx-auto w-full">
+
+        <!-- OVERVIEW TAB: 7-Week Schedule & Roadmap -->
+        <section id="tab-overview" class="space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#1269A8]">
+                <h2 class="text-xl font-bold text-[#1269A8] mb-2">Unit 3 Course Roadmap (May 20 – August 4, 2026)</h2>
+                <p class="text-sm text-slate-600 mb-4">Course: Grammar | Grade: 3rd Grade | Teacher: Nicole De León | Textbooks: Our World 3 Student Book (SB) & Workbook (WB). Topics change every 2 weeks (2 classes per week). Includes 2 weeks of mid-year vacation.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Week 1 & 2 -->
+                    <div class="bg-[#F2F5E9] p-4 rounded-xl border-l-4 border-[#54887D] shadow-sm">
+                        <span class="text-xs font-bold text-[#54887D] uppercase">Weeks 1 & 2 (May 20 - Jun 2)</span>
+                        <h3 class="font-bold text-[#1269A8] text-base mt-1">Topic 1: Some and Any</h3>
+                        <p class="text-xs text-slate-700 mt-1"><strong>SB Pages:</strong> 100, 101 | <strong>WB Pages:</strong> 69, 70</p>
+                        <p class="text-xs text-slate-600 mt-2">Focus: Food vocabulary 1 review, affirmative and negative statements & questions with countable/uncountable nouns.</p>
+                    </div>
+                    <!-- Week 3 & 4 -->
+                    <div class="bg-[#F2F5E9] p-4 rounded-xl border-l-4 border-[#A6B046] shadow-sm">
+                        <span class="text-xs font-bold text-[#A6B046] uppercase">Weeks 3 & 4 (Jun 3 - Jun 16)</span>
+                        <h3 class="font-bold text-[#1269A8] text-base mt-1">Topic 2: A few and A little</h3>
+                        <p class="text-xs text-slate-700 mt-1"><strong>SB Pages:</strong> 103 | <strong>WB Pages:</strong> 72, 73</p>
+                        <p class="text-xs text-slate-600 mt-2">Focus: Quantifiers for small quantities with countable and uncountable food items.</p>
+                    </div>
+                    <!-- Mid-Year Vacation Notice -->
+                    <div class="bg-amber-50 p-4 rounded-xl border-l-4 border-amber-400 shadow-sm">
+                        <span class="text-xs font-bold text-amber-700 uppercase">Mid-Year Break</span>
+                        <h3 class="font-bold text-amber-900 text-base mt-1">Vacation (Jun 17 - Jun 30)</h3>
+                        <p class="text-xs text-amber-800 mt-1">No classes scheduled. Recharge "Sharpen the Saw" habit period!</p>
+                    </div>
+                    <!-- Week 5 -->
+                    <div class="bg-[#F2F5E9] p-4 rounded-xl border-l-4 border-[#88B5C7] shadow-sm">
+                        <span class="text-xs font-bold text-[#1269A8] uppercase">Week 5 (Jul 1 - Jul 7)</span>
+                        <h3 class="font-bold text-[#1269A8] text-base mt-1">Topic 3: Review Units 4 to 6</h3>
+                        <p class="text-xs text-slate-700 mt-1"><strong>SB Pages:</strong> Review | <strong>WB Pages:</strong> 78, 79</p>
+                        <p class="text-xs text-slate-600 mt-2">Focus: Comprehensive consolidation of previous grammatical structures and vocabulary.</p>
+                    </div>
+                    <!-- Week 6 & 7 (Part 1) -->
+                    <div class="bg-[#F2F5E9] p-4 rounded-xl border-l-4 border-[#1269A8] shadow-sm">
+                        <span class="text-xs font-bold text-[#1269A8] uppercase">Weeks 6 & 7 (Jul 8 - Jul 21)</span>
+                        <h3 class="font-bold text-[#1269A8] text-base mt-1">Topic 4: Simple Past Yes/No & Short Answers</h3>
+                        <p class="text-xs text-slate-700 mt-1"><strong>SB Pages:</strong> 120, 121 | <strong>WB Pages:</strong> 83, 84</p>
+                        <p class="text-xs text-slate-600 mt-2">Focus: Vocabulary 2 review (body parts, actions), asking and answering in past tense.</p>
+                    </div>
+                    <!-- Week 7 (Part 2) -->
+                    <div class="bg-[#F2F5E9] p-4 rounded-xl border-l-4 border-[#F7D615] shadow-sm">
+                        <span class="text-xs font-bold text-slate-700 uppercase">Week 7 Final (Jul 22 - Aug 4)</span>
+                        <h3 class="font-bold text-[#1269A8] text-base mt-1">Topic 5: Too and Enough</h3>
+                        <p class="text-xs text-slate-700 mt-1"><strong>SB Pages:</strong> 123 | <strong>WB Pages:</strong> 86, 87</p>
+                        <p class="text-xs text-slate-600 mt-2">Focus: Expressing excess and sufficiency in daily routines and healthy habits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLASS SESSION TAB: 4 Montano Didactic Moments -->
+        <section id="tab-class-session" class="space-y-6 hidden">
+            <!-- Selector for Lesson Topics -->
+            <div class="bg-white p-4 rounded-2xl shadow-md flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>
+                    <label for="lesson-select" class="block text-xs font-bold text-[#1269A8] uppercase mb-1">Select Current Lesson Topic:</label>
+                    <select id="lesson-select" onchange="changeLessonContent()" class="bg-[#F2F5E9] border border-[#88B5C7] rounded-xl px-4 py-2 font-semibold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#1269A8]">
+                        <option value="1">Topic 1 (Weeks 1-2): Some and Any (SB p. 100-101)</option>
+                        <option value="2">Topic 2 (Weeks 3-4): A few and A little (SB p. 103)</option>
+                        <option value="3">Topic 3 (Week 5): Review Units 4 to 6 (WB p. 78-79)</option>
+                        <option value="4">Topic 4 (Weeks 6-7): Simple Past Yes/No Questions (SB p. 120-121)</option>
+                        <option value="5">Topic 5 (Week 7): Too and Enough (SB p. 123)</option>
+                    </select>
+                </div>
+                <div class="text-right">
+                    <span class="inline-block bg-[#A6B046] text-white text-xs font-bold px-3 py-1 rounded-full">Leader in Me Habit Integrated</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Lesson Header Card -->
+            <div id="lesson-header-card" class="bg-[#1269A8] text-white p-6 rounded-2xl shadow-lg border-l-8 border-[#F7D615]">
+                <h2 id="l-title" class="text-xl font-bold">Topic: Some and Any (Our World 3 - Unit 3)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 text-sm text-[#F2F5E9]">
+                    <p><strong>CNB Competency & Learning Achievement:</strong> <span id="l-cnb">Applies grammatical structures correctly in oral and written English. Achievement: Construct accurate sentences using "some" and "any" regarding food quantities.</span></p>
+                    <p><strong>Key Competencies & Montano Habit:</strong> <span id="l-habits">Critical thinking, teamwork, effective communication. Habit 3: "Put First Things First" (Prioritizing tasks and grammar study).</span></p>
+                </div>
+            </div>
+
+            <!-- 4 Moments Tab Buttons -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button onclick="switchMoment('m1')" id="btn-m1" class="moment-btn p-3 rounded-xl font-bold text-sm bg-[#54887D] text-white shadow text-center transition">
+                    I) Motivation & Warm-Up (~5 min)
+                </button>
+                <button onclick="switchMoment('m2')" id="btn-m2" class="moment-btn p-3 rounded-xl font-bold text-sm bg-white text-[#54887D] shadow hover:bg-[#F2F5E9] text-center transition">
+                    II) Individual Work (20 min)
+                </button>
+                <button onclick="switchMoment('m3')" id="btn-m3" class="moment-btn p-3 rounded-xl font-bold text-sm bg-white text-[#54887D] shadow hover:bg-[#F2F5E9] text-center transition">
+                    III) Cooperative Teamwork (30 min)
+                </button>
+                <button onclick="switchMoment('m4')" id="btn-m4" class="moment-btn p-3 rounded-xl font-bold text-sm bg-white text-[#54887D] shadow hover:bg-[#F2F5E9] text-center transition">
+                    IV) Plenary & Simulation (15 min)
+                </button>
+            </div>
+
+            <!-- MOMENT I: Introduction & Warm-Up -->
+            <div id="moment-m1" class="moment-content bg-white p-6 rounded-2xl shadow-md border-l-4 border-[#54887D] space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-[#54887D]">Moment I: Introduction Motivante & Vocabulary Review (~5 mins)</h3>
+                    <span class="bg-[#F2F5E9] text-[#54887D] text-xs font-bold px-3 py-1 rounded-full">Activating Prior Knowledge</span>
+                </div>
+                <div class="bg-[#F2F5E9] p-4 rounded-xl space-y-2">
+                    <p class="font-semibold text-slate-700">Warm-Up Activity: Vocabulary 1 & 2 Quick Flash / Song Chant</p>
+                    <p id="m1-desc" class="text-sm text-slate-600">Review Vocabulary 1 (food items like *a bottle of oil, a box of cereal, a bowl of sugar, a bag of rice, a jar of olives*) and Vocabulary 2 (*money, price, compare, buy, put away*). Sing song *“Let’s Go Shopping!”* (SB p. 98) with partner pointing to pictures.</p>
+                </div>
+                <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs text-amber-900">
+                    <strong>Leader in Me Connection (Habit 1 - Be Proactive):</strong> Students take initiative to participate actively in pronunciation chants and recall grocery items confidently.
+                </div>
+                <!-- Take-Home Research Question -->
+                <div class="bg-blue-50 p-3 rounded-xl border border-blue-200 text-xs text-blue-900">
+                    <strong>🏠 Take-Home Research Challenge:</strong> Ask a family member what healthy food item they always buy at the local market and write down its name in English!
+                </div>
+            </div>
+
+            <!-- MOMENT II: Individual Work -->
+            <div id="moment-m2" class="moment-content bg-white p-6 rounded-2xl shadow-md border-l-4 border-[#1269A8] space-y-4 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-[#1269A8]">Moment II: Trabajo Individual (20 mins)</h3>
+                    <span class="bg-[#F2F5E9] text-[#1269A8] text-xs font-bold px-3 py-1 rounded-full">Independent Production</span>
+                </div>
+                <p id="m2-desc" class="text-sm text-slate-700">Students complete Student Book exercises and Workbook pages independently, avoiding copy-paste by writing original sentences based on personal preferences.</p>
+                
+                <!-- Interactive Accordion for Self-Evaluation Solutions -->
+                <div class="border border-[#88B5C7] rounded-xl overflow-hidden">
+                    <button onclick="toggleAccordion('sol-accordion')" class="w-full bg-[#88B5C7] text-white p-3 font-bold text-left flex justify-between items-center hover:bg-[#1269A8] transition">
+                        <span>💡 Click here to view Answer Key / Solution Orientation (Self-Evaluation)</span>
+                        <svg id="sol-arrow" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="sol-accordion" class="p-4 bg-[#F2F5E9] text-xs text-slate-700 space-y-2 hidden">
+                        <p id="m2-key"><strong>Expected Answers:</strong> 1. We have *some* milk in the fridge. 2. Do we have *any* apples? No, we don't have *any*.</p>
+                        <p class="text-slate-500 italic">Self-Check: Students check their own grammar spelling and punctuation using a green colored pencil.</p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded-xl border border-blue-200 text-xs text-blue-900">
+                    <strong>🏠 Take-Home Research Challenge:</strong> Look inside your kitchen pantry at home and list 3 items using "some" (e.g., *some rice*) and 2 items you don't have using "any" (e.g., *any cookies*).
+                </div>
+            </div>
+
+            <!-- MOMENT III: Cooperative Teamwork -->
+            <div id="moment-m3" class="moment-content bg-white p-6 rounded-2xl shadow-md border-l-4 border-[#A6B046] space-y-4 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-[#A6B046]">Moment III: Trabajo Cooperativo / en Equipo (30 mins)</h3>
+                    <span class="bg-[#F2F5E9] text-[#A6B046] text-xs font-bold px-3 py-1 rounded-full">Roles & Product Creation</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <div class="bg-[#F2F5E9] p-3 rounded-xl">
+                        <strong class="text-[#1269A8]">Role 1: Leader (Synergizer)</strong>
+                        <p class="mt-1">Keeps the team focused and ensures everyone participates equally (Habit 6 - Synergize).</p>
+                    </div>
+                    <div class="bg-[#F2F5E9] p-3 rounded-xl">
+                        <strong class="text-[#1269A8]">Role 2: Writer / Secretary</strong>
+                        <p class="mt-1">Records team sentences and mini-dialogues on the cooperative mini-poster.</p>
+                    </div>
+                    <div class="bg-[#F2F5E9] p-3 rounded-xl">
+                        <strong class="text-[#1269A8]">Role 3: Presenter</strong>
+                        <p class="mt-1">Shares the team's creative grocery list or roleplay during plenary.</p>
+                    </div>
+                </div>
+                <p id="m3-task" class="text-sm text-slate-700"><strong>Team Task:</strong> Create a "Supermarket Shopping Cart Menu" mini-poster combining target grammar structures with correct pricing and quantities.</p>
+                
+                <div class="bg-blue-50 p-3 rounded-xl border border-blue-200 text-xs text-blue-900">
+                    <strong>🏠 Take-Home Research Challenge:</strong> Discuss with your parents how much a bag of rice or milk costs at your neighborhood supermarket and bring the price to class tomorrow.
+                </div>
+            </div>
+
+            <!-- MOMENT IV: Plenary & Simulation / Game -->
+            <div id="moment-m4" class="moment-content bg-white p-6 rounded-2xl shadow-md border-l-4 border-[#F7D615] space-y-4 hidden">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-amber-800">Moment IV: Plenaria & Interactive Game (15 mins)</h3>
+                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Interactive Closure</span>
+                </div>
+                <p class="text-sm text-slate-700">Teams present their mini-posters in a 2-minute showcase explaining their shopping list sentences.</p>
+                
+                <!-- Interactive Mini Digital Game Simulator -->
+                <div class="bg-[#F2F5E9] p-4 rounded-xl border border-[#88B5C7] space-y-3">
+                    <h4 class="font-bold text-[#1269A8] text-sm">🎮 Interactive Grammar Trivia Challenge (Classroom Game)</h4>
+                    <p id="game-question" class="text-xs font-semibold text-slate-800">Question 1: Do we have _____ bananas in the kitchen?</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="checkAnswer(false)" class="bg-white p-2 rounded-lg border border-[#88B5C7] text-xs font-bold hover:bg-red-100 transition">A) some</button>
+                        <button onclick="checkAnswer(true)" class="bg-white p-2 rounded-lg border border-[#88B5C7] text-xs font-bold hover:bg-green-100 transition">B) any</button>
+                    </div>
+                    <p id="game-feedback" class="text-xs font-bold text-center text-slate-600"></p>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded-xl border border-blue-200 text-xs text-blue-900">
+                    <strong>🏠 Take-Home Research Challenge:</strong> Teach a family member one new grammar rule or vocabulary word you learned today before dinner!
+                </div>
+            </div>
+        </section>
+
+        <!-- RUBRIC TAB: Plenary Evaluation Rubric -->
+        <section id="tab-rubric" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#54887D]">
+                <h2 class="text-xl font-bold text-[#54887D] mb-2">Plenary Group Evaluation Checklist & Rubric</h2>
+                <p class="text-sm text-slate-600 mb-4">Teacher Nicole De León uses this interactive rubric during Moment IV group presentations.</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-[#88B5C7] text-white">
+                                <th class="p-3 rounded-l-xl">Evaluation Criteria</th>
+                                <th class="p-3">Excellent (4 pts)</th>
+                                <th class="p-3">Satisfactory (3 pts)</th>
+                                <th class="p-3">In Progress (2 pts)</th>
+                                <th class="p-3 rounded-r-xl">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-3 font-semibold text-[#1269A8]">1. Domain of Topic & Clarity</td>
+                                <td class="p-3 text-slate-600">Explains target grammar effortlessly with clear pronunciation.</td>
+                                <td class="p-3 text-slate-600">Explains clearly with minor prompts.</td>
+                                <td class="p-3 text-slate-600">Needs significant guidance.</td>
+                                <td class="p-3"><input type="number" min="1" max="4" value="4" class="w-12 p-1 border rounded text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-[#1269A8]">2. Logical Procedure</td>
+                                <td class="p-3 text-slate-600">Sentences and examples follow perfect grammatical structure.</td>
+                                <td class="p-3 text-slate-600">Mostly correct sentence formation.</td>
+                                <td class="p-3 text-slate-600">Frequent grammatical errors.</td>
+                                <td class="p-3"><input type="number" min="1" max="4" value="4" class="w-12 p-1 border rounded text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-[#1269A8]">3. Collaborative Work (Synergy)</td>
+                                <td class="p-3 text-slate-600">All team members participate equitably (Habit 6).</td>
+                                <td class="p-3 text-slate-600">Most members participate.</td>
+                                <td class="p-3 text-slate-600">Only one person dominates.</td>
+                                <td class="p-3"><input type="number" min="1" max="4" value="4" class="w-12 p-1 border rounded text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-[#1269A8]">4. Q&A Response Capacity</td>
+                                <td class="p-3 text-slate-600">Answers peer and teacher questions accurately.</td>
+                                <td class="p-3 text-slate-600">Answers with team support.</td>
+                                <td class="p-3 text-slate-600">Struggles to answer questions.</td>
+                                <td class="p-3"><input type="number" min="1" max="4" value="3" class="w-12 p-1 border rounded text-center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1269A8] text-white text-center p-4 mt-auto text-xs border-t-4 border-[#F7D615]">
+        Colegio Montano © 2026 | Leader in Me Institution | CNB Guatemala Alignment
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        // Fullscreen Toggle Function
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Switch Main Tabs
+        function switchTab(tabId) {
+            document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-[#1269A8]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#1269A8]');
+            });
+            document.getElementById('btn-' + tabId).classList.remove('bg-white', 'text-[#1269A8]');
+            document.getElementById('btn-' + tabId).classList.add('bg-[#1269A8]', 'text-white');
+        }
+
+        // Switch 4 Didactic Moments
+        function switchMoment(momentId) {
+            document.querySelectorAll('.moment-content').forEach(mc => mc.classList.add('hidden'));
+            document.getElementById('moment-' + momentId).classList.remove('hidden');
+
+            document.querySelectorAll('.moment-btn').forEach(btn => {
+                btn.classList.remove('bg-[#54887D]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#54887D]');
+            });
+            document.getElementById('btn-' + momentId).classList.remove('bg-white', 'text-[#54887D]');
+            document.getElementById('btn-' + momentId).classList.add('bg-[#54887D]', 'text-white');
+        }
+
+        // Toggle Accordion Solution
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const arrow = document.getElementById('sol-arrow');
+            el.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        // Lesson Data Bank for Dynamic Switching
+        const lessonsData = {
+            "1": {
+                title: "Topic 1: Some and Any (Our World 3 - Unit 3)",
+                cnb: "Applies grammatical structures correctly in oral and written English. Achievement: Construct accurate sentences using 'some' and 'any' regarding food quantities.",
+                habits: "Critical thinking, teamwork. Habit 3: 'Put First Things First'.",
+                m1: "Review Vocabulary 1 (food items: a bottle of oil, a box of cereal, a bowl of sugar, a bag of rice, a jar of olives) and Vocabulary 2 (money, price, compare, buy, put away). Sing song 'Let’s Go Shopping!' (SB p. 98).",
+                m2: "Students complete SB pages 100-101 and WB pages 69-70 independently with original sentences.",
+                m2key: "Expected Answers: 1. We have some milk in the fridge. 2. Do we have any apples? No, we don't have any.",
+                m3: "Team Task: Create a 'Supermarket Shopping Cart Menu' mini-poster combining target grammar structures with correct pricing and quantities."
+            },
+            "2": {
+                title: "Topic 2: A few and A little (Our World 3 - Unit 3)",
+                cnb: "Differentiates countable and uncountable quantifiers. Achievement: Use 'a few' with countable and 'a little' with uncountable nouns accurately.",
+                habits: "Creativity, decision making. Habit 2: 'Begin with the End in Mind'.",
+                m1: "Quick flashcard review of food jars and bowls. Ask: 'Do you like sweet food?' Connect to daily snacks.",
+                m2: "Students complete SB page 103 and WB pages 72-73.",
+                m2key: "Expected Answers: 1. I eat a few strawberries. 2. I drink a little juice.",
+                m3: "Team Task: Design a 'Healthy Snack Recipe' poster using 'a few' and 'a little' correctly."
+            },
+            "3": {
+                title: "Topic 3: Review Units 4 to 6 (Our World 3 - Unit 3)",
+                cnb: "Consolidates prior linguistic competencies. Achievement: Successfully solve comprehensive review exercises.",
+                habits: "Flexibility, emotional intelligence. Habit 5: 'Seek First to Understand, Then to Be Understood'.",
+                m1: "Trivia warmup recalling past vocabulary and sentence patterns.",
+                m2: "Students complete WB pages 78 and 79 independently.",
+                m2key: "Expected Answers: Review sections check correct verb tenses and noun plurals.",
+                m3: "Team Task: Peer-check review booklets in pairs and explain tricky questions to each other."
+            },
+            "4": {
+                title: "Topic 4: Simple Past Yes/No Questions & Short Answers (Our World 3 - Unit 3)",
+                cnb: "Expresses past actions correctly. Achievement: Formulate Yes/No questions using 'Did' and answer correctly.",
+                habits: "Communication, teamwork. Habit 4: 'Think Win-Win'.",
+                m1: "Review Vocabulary 2 (body parts, actions: stretch, bend, a muscle, a bone) and sing 'Let’s Move' (SB p. 118).",
+                m2: "Students complete SB pages 120-121 and WB pages 83-84.",
+                m2key: "Expected Answers: 1. Did you stretch your arms? Yes, I did. / No, I didn't.",
+                m3: "Team Task: Conduct a 'Fitness Interview' in pairs asking what physical activities teammates did yesterday."
+            },
+            "5": {
+                title: "Topic 5: Too and Enough (Our World 3 - Unit 3)",
+                cnb: "Evaluates quantity adequacy. Achievement: Use 'too' and 'enough' correctly regarding food and exercise.",
+                habits: "Sharpen the Saw (Habit 7) - Balanced healthy living.",
+                m1: "Interactive discussion on eating habits: 'Is eating too much candy healthy?'",
+                m2: "Students complete SB page 123 and WB pages 86-87.",
+                m2key: "Expected Answers: 1. There is too much sugar. 2. We don't have enough water.",
+                m3: "Team Task: Create a 'Balanced Lifestyle Guide' poster advising when food is 'too sweet' or when there is 'enough sleep'."
+            }
+        };
+
+        function changeLessonContent() {
+            const val = document.getElementById('lesson-select').value;
+            const data = lessonsData[val];
+            document.getElementById('l-title').innerText = data.title;
+            document.getElementById('l-cnb').innerText = data.cnb;
+            document.getElementById('l-habits').innerText = data.habits;
+            document.getElementById('m1-desc').innerText = data.m1;
+            document.getElementById('m2-desc').innerText = data.m2;
+            document.getElementById('m2-key').innerHTML = `<strong>Expected Answers:</strong> ${data.m2key}`;
+            document.getElementById('m3-task').innerHTML = `<strong>Team Task:</strong> ${data.m3}`;
+        }
+
+        // Mini Trivia Game Checker
+        function checkAnswer(isCorrect) {
+            const feedback = document.getElementById('game-feedback');
+            if (isCorrect) {
+                feedback.innerHTML = "🎉 Correct! We use 'any' in questions with plural countable nouns.";
+                feedback.className = "text-xs font-bold text-center text-green-700 mt-2";
+            } else {
+                feedback.innerHTML = "❌ Try again! Remember 'some' is for affirmative statements.";
+                feedback.className = "text-xs font-bold text-center text-red-700 mt-2";
+            }
+        }
+    </script>
+</body>
+</html>
